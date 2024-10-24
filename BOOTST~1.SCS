@@ -1,27 +1,65 @@
-/******* Customized Bootstrap ********/
+/*!
+ * Bootstrap Grid v5.0.0 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 
-$primary: #06BBCC;
-$light: #F0FBFC;
-$dark: #181d38;
+$include-column-box-sizing: true !default;
 
-$font-family-base: 'Heebo', sans-serif;
+@import "functions";
+@import "variables";
 
-$headings-font-family: 'Nunito', sans-serif;
+@import "mixins/lists";
+@import "mixins/breakpoints";
+@import "mixins/container";
+@import "mixins/grid";
+@import "mixins/utilities";
 
-$body-color: #52565b;
+@import "vendor/rfs";
 
-$headings-color: $dark;
+@import "containers";
+@import "grid";
 
-$headings-font-weight: 700;
+@import "utilities";
+// Only use the utilities we need
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-get-multiple(
+  $utilities,
+  (
+    "display",
+    "order",
+    "flex",
+    "flex-direction",
+    "flex-grow",
+    "flex-shrink",
+    "flex-wrap",
+    "justify-content",
+    "align-items",
+    "align-content",
+    "align-self",
+    "margin",
+    "margin-x",
+    "margin-y",
+    "margin-top",
+    "margin-end",
+    "margin-bottom",
+    "margin-start",
+    "negative-margin",
+    "negative-margin-x",
+    "negative-margin-y",
+    "negative-margin-top",
+    "negative-margin-end",
+    "negative-margin-bottom",
+    "negative-margin-start",
+    "padding",
+    "padding-x",
+    "padding-y",
+    "padding-top",
+    "padding-end",
+    "padding-bottom",
+    "padding-start",
+  )
+);
 
-$display-font-weight: 800;
-
-$enable-responsive-font-sizes: true;
-
-$border-radius: 0px;
-
-$link-decoration: none;
-
-$enable-negative-margins: true;
-
-@import "bootstrap/scss/bootstrap";
+@import "utilities/api";
